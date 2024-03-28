@@ -1,0 +1,22 @@
+﻿@model IEnumerable<InnoMindsAdminPanel.Models.Product>
+
+<h2>Product</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Price.ToString("C")</td>
+                <td>@item.Description</td>
+            </tr>
+        }
+    </tbody>
+</table>

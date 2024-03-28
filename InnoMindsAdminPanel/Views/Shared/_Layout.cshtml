@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - InnoMindsAdminPanel</title>
+    <!-- Ensure that you have the bootstrap.min.css in your wwwroot/lib/bootstrap/dist/css directory -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- Ensure that you have a site.css file in your wwwroot/css directory -->
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <!-- Make sure the path to the image is correct and the image exists in your wwwroot/Images directory -->
+                <a class="navbar-brand" href="https://www.innominds.com/">
+                    <img src="~/Images/innominds_25_logo.svg" alt="InnoMinds Logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Clients">Clients</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Plans">Plans</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Products">Products</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container text-muted text-center">
+            &copy; @DateTime.Now.Year - InnoMindsAdminPanel
+        </div>
+    </footer>
+
+    <!-- Ensure that you have the bootstrap.bundle.min.js in your wwwroot/lib/bootstrap/dist/js directory -->
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

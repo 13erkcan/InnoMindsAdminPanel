@@ -1,0 +1,28 @@
+﻿@model IEnumerable<InnoMindsAdminPanel.Models.Client>
+
+<h2>Client</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Email</td>
+                <td>@item.PhoneNumber</td>
+                <td>
+                    <a href="@Url.Action("Details", "Clients", new { id = item.ClientId })" class="btn btn-info">Details</a>
+                    <a href="@Url.Action("Edit", "Clients", new { id = item.ClientId })" class="btn btn-primary">Edit</a>
+                    <a href="@Url.Action("Delete", "Clients", new { id = item.ClientId })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

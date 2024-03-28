@@ -1,0 +1,22 @@
+﻿@model IEnumerable<InnoMindsAdminPanel.Models.Plan>
+
+<h2>Plans</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var plan in Model)
+        {
+            <tr>
+                <td>@plan.Name</td>
+                <td>@plan.Price.ToString("C")</td> <!-- Format as currency -->
+                <td>@plan.Description</td>
+            </tr>
+        }
+    </tbody>
+</table>
